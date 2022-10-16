@@ -7,6 +7,7 @@ import csv
 
 
 def third_script():
+    # redact file 1_0001.txt to random <10000 .txt
     names = [i for i in range(10000)]
     out_directory = os.path.dirname(__file__)
     if os.path.isdir("third_dataset") == False: os.makedirs("third_dataset")

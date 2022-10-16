@@ -3,6 +3,7 @@ import os
 
 
 def second_script():
+    #read csv and copy dataset .../1/0001.txt =.../1_0001.txt
     with open("classmates.csv", "r") as fh:
         reader = csv.reader(fh) # (!) обратите внимание, что reader возвращает итератор
         spisok = list(reader)  # поэтому мы делаем приведение к типу list

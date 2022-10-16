@@ -4,6 +4,7 @@ from tqdm.notebook import tqdm_notebook
 
 
 def first_script():
+    #create csv 
     out_directory = os.path.dirname(__file__)
     with open("classmates.csv", mode="w", encoding='utf-8') as w_file:
         file_writer = csv.writer(w_file, delimiter = ",", lineterminator="\r")

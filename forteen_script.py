@@ -3,7 +3,8 @@
 Данная функция должна быть в трёх версиях для пунктов 1–3."""
 import csv
 
-def forteen_script(star):
+def forteen_script(star): 
+    # print directorys on star
     with open("classmates.csv", "r") as fh:
         reader = csv.reader(fh) # (!) обратите внимание, что reader возвращает итератор
         spisok = list(reader)  # поэтому мы делаем приведение к типу list
