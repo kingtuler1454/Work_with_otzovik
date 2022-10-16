@@ -1,6 +1,7 @@
 import first_script
 import second_script
 import third_script
+import forteen_script
 """
 -Написать скрипт для формирования текстового файла-аннотации собранного датасета. Файл-аннотация должен представлять собой 
 csv-файл, в котором в первой колонке будет указан абсолютный путь к файлу, во второй колонке относительный путь относительно 
@@ -20,7 +21,8 @@ def main():
     first_script.first_script()
     second_script.second_script()
     third_script.third_script()
-    #first_script.first_script()
+    forteen_script.forteen_script(1)
+    
 
 
 
