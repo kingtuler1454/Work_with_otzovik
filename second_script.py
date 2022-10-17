@@ -2,7 +2,7 @@ import csv
 import os
 
 
-def second_script():
+def second_script(path:str) ->str:
     #read csv and copy dataset .../1/0001.txt =.../1_0001.txt
     with open("classmates.csv", "r") as fh:
         reader = csv.reader(fh) # (!) обратите внимание, что reader возвращает итератор
@@ -19,5 +19,31 @@ def second_script():
         content = True
 
 
+def iterator2(name: str) -> str:
+    '''create a csv'''
+    names = os.listdir(os.path.join("dataset", name))
+    for i in range(len(names)):
+        yield (names[i]) # делаем итератор
+    return None
+
+
+class Iterator2_txt:
+    def __init__(self, name: str):
+        self.names = os.listdir(os.path.join("dataset", name))
+        self.limit = len(self.names)
+        self.counter = 0
+
+    def __next__(self):
+        if self.counter < self.limit:
+            self.counter += 1
+            return self.names[self.counter - 1]
+        else:
+            raise StopIteration
+
+
+def script_2(name: str) -> None:
+    '''create a csv'''
+    second_script(name)
+
 if __name__=="__main__":
-    second_script()
+    script_2("rt")

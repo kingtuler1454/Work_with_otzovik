@@ -6,7 +6,7 @@ import csv
 принадлежность экземпляра к классу создать файл-аннотацию (как в пункте 1)."""
 
 
-def third_script():
+def third_script(path:str) ->str:
     # redact file 1_0001.txt to random <10000 .txt
     names = [i for i in range(10000)]
     out_directory = os.path.dirname(__file__)
@@ -25,5 +25,31 @@ def third_script():
             file_writer.writerow([directory, os.path.join("second_dataset", element), element[0]])
 
 
+def iterator3(name: str) -> str:
+    '''create a csv'''
+    names = os.listdir(os.path.join("dataset", name))
+    for i in range(len(names)):
+        yield (names[i]) # делаем итератор
+    return None
+
+
+class Iterator3_txt:
+    def __init__(self, name: str):
+        self.names = os.listdir(os.path.join("dataset", name))
+        self.limit = len(self.names)
+        self.counter = 0
+
+    def __next__(self):
+        if self.counter < self.limit:
+            self.counter += 1
+            return self.names[self.counter - 1]
+        else:
+            raise StopIteration
+
+
+def script_3(name: str) -> None:
+    '''create a csv'''
+    third_script(name)
+
 if __name__=="__main__":
-    third_script()
+    script_3("rt")
